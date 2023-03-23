@@ -1,6 +1,6 @@
 
 h1{
-  font-size: 50px;
+  font-size: 30px;
   color: #000;
   text-transform: uppercase;
   font-weight: 300;
@@ -13,13 +13,13 @@ table{
   table-layout: fixed;
 }
 .tbl-header{
-  background-color: #9999ff;
+  background-color: rgba(255,255,255,0.3);
  }
 .tbl-content{
   height:400px;
   overflow-x:auto;
   margin-top: 0px;
-  border: 3px #9999ff;
+  border: 1px solid rgba(255,255,255,0.3);
 }
 th{
   padding: 20px 15px;
@@ -36,10 +36,10 @@ td{
   font-weight: 300;
   font-size: 14px;
   color: #fff;
-  border-bottom: solid 5px #9999ff;
+  border-bottom: solid 2px rgba(255,255,255,0.1);
 }
 section{
-  margin: 0px 50px;
+  margin: 50px;
 }
 
 ::-webkit-scrollbar {
@@ -55,15 +55,45 @@ section{
 section {
   overflow-x:hidden;
 }
+.slideInRight {
+  animation-name: slideInRight;
+} 
+.slideInDown {
+  animation-name: slideInDown;
+}
+.animated {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
 
+@keyframes slideInRight {
+  from {
+    transform: translate3d(100%, 0, 0);
+    visibility: visible;
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes slideInDown {
+  from {
+    transform: translate3d(0, 100%, 0);
+    visibility: visible;
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
 
 @media screen and (max-width: 900px) {
   section{
     margin: 10px;
   }
-  th {
+  th{
+    padding: 8px 2px;
     font-size: 11px;
-    padding: 10px 2px;
   }
   td{
     padding: 8px;
